@@ -1,9 +1,8 @@
 .alert-message__success {
     color: #0f5132;
     background: #d1e7dd;
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 3px;
+    max-width: 1230px;
+    padding: 10px;
     margin-bottom: 12px;
     font-weight: bold;
     list-style: none;
@@ -12,9 +11,8 @@
 .alert-message__errors {
     color: #842029;
     background-color: #f8d7da;
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 3px;
+    max-width: 1230px;
+    padding: 10px;
     margin-bottom: 12px;
     font-weight: bold;
     list-style: none;

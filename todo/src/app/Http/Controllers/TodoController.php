@@ -11,7 +11,7 @@ class TodoController extends Controller
 {
     public function index()
     {
-        $todos = Todo::with('category')->orderBy('created_at', 'desc')->get();
+        $todos = Todo::with('category')->orderBy('created_at', 'desc')->paginate(10);
         $categories = Category::orderBy('created_at', 'asc')->get();
 
         return view('index', ['todos' => $todos, 'categories' => $categories]);
@@ -58,7 +58,7 @@ class TodoController extends Controller
             $query->where('category_id', $search_category);
         }
 
-        $todos = $query->orderBy('created_at', 'desc')->get();
+        $todos = $query->with('category')->orderBy('created_at', 'desc')->paginate(10)->withQueryString();
 
         $categories = Category::orderBy('created_at', 'asc')->get();
 

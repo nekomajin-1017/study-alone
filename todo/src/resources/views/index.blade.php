@@ -7,9 +7,9 @@
 @section('content')
 @if (session('message'))
 <div class="alert-message--alert">
-    <div class="alert-message__success">
-        <p class="alert-message__text">{{ session('message') }}</p>
-    </div>
+    <ul class="alert-message__success">
+        <li class="alert-message__text">{{ session('message') }}</li>
+    </ul>
 </div>
 @endif
 
@@ -68,7 +68,7 @@
         <div class="todo-list__header">
             <div>
                 <h2 class="todo-list__title">Todo一覧</h2>
-                <p class="todo-list__small-title">合計 {{ $todos->count() }} 件</p>
+                <p class="todo-list__small-title">合計 {{ $todos->total() }} 件</p>
             </div>
         </div>
         <ul class="todo-list__items">
